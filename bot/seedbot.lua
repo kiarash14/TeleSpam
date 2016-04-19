@@ -54,7 +54,7 @@ function msg_valid(msg)
   -- Don't process outgoing messages
   if msg.out then
     print('\27[36mNot valid: msg from us\27[39m')
-    return false
+  --  return false
   end
 
   -- Before bot was started
@@ -78,10 +78,10 @@ function msg_valid(msg)
     return false
   end
 
-  if msg.from.id == our_id then
+ --[[ if msg.from.id == our_id then
     print('\27[36mNot valid: Msg from our id\27[39m')
     return false
-  end
+  end--]]
 
   if msg.to.type == 'encr_chat' then
     print('\27[36mNot valid: Encrypted chat\27[39m')
@@ -232,32 +232,9 @@ function create_config( )
 	"whitelist",
 	"msg_checks"
     },
-    sudo_users = {110626080,103649648,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {112840592},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v4
-An advanced administration bot based on TG-CLI written in Lua
-
-https://github.com/SEEDTEAM/TeleSeed
-
-Admins
-@iwals [Founder]
-@imandaneshi [Developer]
-@POTUS [Developer]
-@seyedan25 [Manager]
-@aRandomStranger [Admin]
-
-Special thanks to
-awkward_potato
-Siyanew
-topkecleon
-Vamptacus
-
-Our channels
-@teleseedch [English]
-@iranseed [persian]
-
-Our website 
-http://teleseed.seedteam.org/
+    about_text = [[
 ]],
     help_text_realm = [[
 Realm Commands:
